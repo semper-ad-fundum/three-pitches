@@ -1,0 +1,40 @@
+encoding  utf-8
+language en
+
+source "main.th"
+
+export model -o output/trzecia.lox
+export model -format survex -o output/trzecia.3d
+export map -o output/trzecia.kml
+export map -o output/trzecia.xvi
+export map -projection extended -o output/trzecia_ext.xvi
+
+layout normal
+     #scale 1 300
+     doc-author "Paweł Krawczyk"
+     doc-title "Three pitches, Montenegro"
+     statistics explo all
+     statistics topo all
+     statistics carto all
+     statistics copyright all
+     #color map-fg 80
+     #color map-bg 80
+     #color map-fg altitude
+     legend on
+     #grid bottom
+     #grid-size 50 50 50 m
+     symbol-hide group cave-centerline
+     symbol-hide group surface-centreline
+     symbol-hide point surface-station
+     symbol-hide point cave-station
+endlayout
+
+select map@main
+
+export map -format pdf -layout normal -o output/trzecia.pdf
+export map -format svg -layout normal -o output/trzecia.svg
+
+select map_ext@main
+
+export map -format pdf  -layout normal -projection extended -o output/trzecia_ext.pdf
+export map -format svg  -layout normal -projection extended -o output/trzecia_ext.svg

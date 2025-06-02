@@ -1,0 +1,25 @@
+encoding  utf-8
+survey main  -title "Three pitches, Montenegro"
+
+input "trzecia.th"
+
+#input "surveys/nasdem.th"
+
+input trzecia.th2
+
+map map
+ scrap57
+ scrap1
+ break
+ scrap2
+endmap
+
+input trzecia_ext.th2
+
+map map_ext
+ scrap12
+ scrap44
+endmap
+
+endsurvey
+
